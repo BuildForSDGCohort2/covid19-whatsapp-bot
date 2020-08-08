@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const twilio = require('twilio')
 
 require('dotenv');
-const accountSid = "AC85aa1607823114fab149a3e8c26ad443";
-const authToken = "f01014fa0fc7ac2723e6c81515038c07" ;
+const accountSid = process.env.SID;
+const authToken = process.env.AUTH;
 const client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
