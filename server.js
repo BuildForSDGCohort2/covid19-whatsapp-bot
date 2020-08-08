@@ -36,7 +36,7 @@ app.post('/incoming', (req, res) => {
     var msg = twiml.message(`*Hey 👋*
 Try it out - send me any country name to get its covid statistics`+
 '\n\n' + 'Bot Created by Mulubwa Chungu'+
-'\n\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n\n' + 'gihub: https://github.com/Mulubwa17')
+'\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n' + 'gihub: https://github.com/Mulubwa17')
     res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(twiml.toString());
   }
