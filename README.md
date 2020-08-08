@@ -8,8 +8,8 @@ A whatsapp bot using node ,express and twilio
         CovidBot <span class="text-grey">for WhatsApp</span> <br>🤖  💬
       </h1>
       <h2> To use this bot:</h2>
-      <p> 1. Text "join plenty-taken" to <span class="text-grey">+14155238886 🤖</span> to join the whatsapp sandbox</p>
-      <p> 2. WhatsApp your country name to get a reply with a summary of covid stats for specified country.
+      <p> 1. WhatsApp text "join plenty-taken" to <span class="text-grey">+14155238886 🤖</span> to join the whatsapp sandbox</p>
+      <p> 2. WhatsApp text your country name to get a reply with a summary of covid stats for specified country.
       </p>    
 
 
