@@ -11,7 +11,7 @@ A whatsapp bot using node ,express and twilio
       <p> 1. WhatsApp text "join plenty-taken" to <span class="text-grey">+14155238886 🤖</span> to join the whatsapp sandbox</p>
       <p> 2. WhatsApp text your country name (e.g Zambia) to get a reply with a summary of covid stats for specified country.
       </p> 
-       <img src="./Image from iOS.jpg" >   
+       <img src="./Image from iOS.jpeg" >   
       
 
 
