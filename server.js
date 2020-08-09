@@ -30,14 +30,14 @@ app.post('/incoming', (req, res) => {
 
     const msg = twiml.message( body['country'] +  '\n\n'+'Cases Today : ' + body['todayCases']+ '\n\n'+'Deaths Today : ' +body['todayDeaths']+ '\n\n'+'Total Cases : ' +body['cases']+ '\n\n'+'Active Cases : ' +body['active']+ '\n\n'+'Total Deaths : ' +body['deaths']+ '\n\n'+'Total Recovered : ' +body['recovered']+ '\n\n'+'Total critical : ' +body['critical']+
 '\n\n' + 'Created by Mulubwa Chungu'+
-'\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n' + 'gihub: https://github.com/Mulubwa17')
+'\n\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n\n' + 'gihub: https://github.com/Mulubwa17')
     res.writeHead(200, { 'Content-Type': 'text/xml' })
     res.end(twiml.toString())})}
   else{
     var msg = twiml.message(`*Hey 👋*
 Try it out - send me any country name to get its covid statistics`+
 '\n\n' + 'Bot Created by Mulubwa Chungu'+
-'\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n' + 'gihub: https://github.com/Mulubwa17')
+'\n\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n\n' + 'gihub: https://github.com/Mulubwa17')
     res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(twiml.toString());
   }
