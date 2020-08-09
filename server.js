@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.post('/incoming', (req, res) => {
-  const date = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+  const date = new Date().toLocaleDateString()
   const twiml = new MessagingResponse();
   if (req.body.Body.toLowerCase().trim() != "hi" && req.body.Body.toLowerCase().trim() != "hello" && req.body.Body.toLowerCase().trim() != "test" && req.body.Body.toLowerCase().trim() != "help") {
     request('https://coronavirus-19-api.herokuapp.com/countries/' + req.body.Body, function (error, response, body) {
