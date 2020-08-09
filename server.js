@@ -1,13 +1,13 @@
-var express = require('express');
-var app = express();
-var request = require('request');
+const express = require('express');
+const request = require('request');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
 const twilio = require('twilio')
-
-require('dotenv');
-const accountSid = "AC85aa1607823114fab149a3e8c26ad443";
-const authToken = "f01014fa0fc7ac2723e6c81515038c07" ;
+dotenv.config();
+const app = express();
+const accountSid = process.env.SID;
+const authToken =  process.env.AUTH;
 const client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
@@ -29,7 +29,8 @@ app.post('/incoming', (req, res) => {
     }
 
     const msg = twiml.message( body['country'] +  '\n\n'+'Cases Today : ' + body['todayCases']+ '\n\n'+'Deaths Today : ' +body['todayDeaths']+ '\n\n'+'Total Cases : ' +body['cases']+ '\n\n'+'Active Cases : ' +body['active']+ '\n\n'+'Total Deaths : ' +body['deaths']+ '\n\n'+'Total Recovered : ' +body['recovered']+ '\n\n'+'Total critical : ' +body['critical']+
-'\n\n' + 'Created by Mulubwa Chungu')
+'\n\n' + 'Created by Mulubwa Chungu'+
+'\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/'+'\n' + 'gihub: https://github.com/Mulubwa17')
     res.writeHead(200, { 'Content-Type': 'text/xml' })
     res.end(twiml.toString())})}
   else{
