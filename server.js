@@ -41,9 +41,9 @@ app.post("/incoming", (req, res) => {
           
             body["country"] +
             "  " +
-            "(" +
-            date +
-            ")" +
+            // "(" +
+            // date +
+            // ")" +
             "\n\n" +
             "Cases Today : " +
             body["todayCases"] +
