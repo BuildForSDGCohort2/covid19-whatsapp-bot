@@ -22,7 +22,7 @@ app.post('/incoming', (req, res) => {
   const date = new Date().toLocale.toString()
   const twiml = new MessagingResponse();
   if (req.body.Body.toLowerCase().trim() != "hi" && req.body.Body.toLowerCase().trim() != "hello" && req.body.Body.toLowerCase().trim() != "test" && req.body.Body.toLowerCase().trim() != "help") {
-    request('https://disease.sh/v3/covid-19/countries/' + req.body.Body, function (error, response, body) {
+    request('https://coronavirus-19-api.herokuapp.com/countries/' + req.body.Body, function (error, response, body) {
       body = JSON.parse(body)
       console.log(body);
 
@@ -30,7 +30,7 @@ app.post('/incoming', (req, res) => {
         body = body
       }
 
-      const msg = twiml.message( body['countryInfo'][0]['flag'] + body['country'] + '  '+ '(' + date + ')' + '\n\n' + 'Updated on : ' + body['updated'].toLocale.toString+ '\n\n' + 'Cases Today : ' + body['todayCases'] + '\n\n' + 'Deaths Today : ' + body['todayDeaths'] + '\n\n' + 'Total Cases : ' + body['cases'] + '\n\n' + 'Active Cases : ' + body['active'] + '\n\n' + 'Total Deaths : ' + body['deaths'] + '\n\n' + 'Total Recovered : ' + body['recovered'] + '\n\n' + 'Total critical : ' + body['critical'] +'\n\n' + 'Total tests : ' + body['tests'] +
+      const msg = twiml.message(body['country'] + '  '+ '(' + date + ')' + '\n\n' + 'Cases Today : ' + body['todayCases'] + '\n\n' + 'Deaths Today : ' + body['todayDeaths'] + '\n\n' + 'Total Cases : ' + body['cases'] + '\n\n' + 'Active Cases : ' + body['active'] + '\n\n' + 'Total Deaths : ' + body['deaths'] + '\n\n' + 'Total Recovered : ' + body['recovered'] + '\n\n' + 'Total critical : ' + body['critical'] +
         '\n\n' + 'Created by Mulubwa Chungu' +
         '\n\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/' + '\n\n' + 'github: https://github.com/Mulubwa17')
       res.writeHead(200, {
