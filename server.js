@@ -6,8 +6,8 @@ const dotenv = require("dotenv");
 const twilio = require("twilio");
 dotenv.config();
 const app = express();
-const accountSid = process.env.SID;
-const authToken = process.env.AUTH;
+const accountSid = "AC85aa1607823114fab149a3e8c26ad443";
+const authToken = "f01014fa0fc7ac2723e6c81515038c07";
 const client = require("twilio")(accountSid, authToken);
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
 
