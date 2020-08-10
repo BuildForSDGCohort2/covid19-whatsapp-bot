@@ -22,7 +22,7 @@ app.post('/incoming', (req, res) => {
   const date = new Date().toLocale.toString()
   const twiml = new MessagingResponse();
   if (req.body.Body.toLowerCase().trim() != "hi" && req.body.Body.toLowerCase().trim() != "hello" && req.body.Body.toLowerCase().trim() != "test" && req.body.Body.toLowerCase().trim() != "help") {
-    request('https://disease.sh/v3/covid-19/countries' + req.body.Body, function (error, response, body) {
+    request('https://disease.sh/v3/covid-19/countries/' + req.body.Body, function (error, response, body) {
       body = JSON.parse(body)
       console.log(body);
 
