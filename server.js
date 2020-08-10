@@ -19,7 +19,7 @@ app.use(
 );
 
 app.post("/incoming", (req, res) => {
-  const date = new Date().toLocale.toString();
+  const date = new Date().toLocaleString();
   const twiml = new MessagingResponse();
   if (
     req.body.Body.toLowerCase().trim() != "hi" &&
@@ -38,7 +38,7 @@ app.post("/incoming", (req, res) => {
         }
 
         const msg = twiml.message(
-          body["countryInfo"][0]["flag"] +
+          
             body["country"] +
             "  " +
             "(" +
