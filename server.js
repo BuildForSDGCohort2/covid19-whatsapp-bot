@@ -76,7 +76,7 @@ app.post("/incoming", (req, res) => {
             "github: https://github.com/Mulubwa17"
         );
         res.writeHead(200, {
-          "Content-Type": "text/html",
+          "Content-Type": "text/xml",
         });
         res.end(twiml.toString());
       }
