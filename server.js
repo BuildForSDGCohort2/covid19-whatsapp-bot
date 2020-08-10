@@ -38,7 +38,7 @@ app.post("/incoming", (req, res) => {
         }
 
         const msg = twiml.message(
-          body["countryInfo"]["flag"] +
+          body["countryInfo"][0]["flag"] +
             body["country"] +
             "  " +
             "(" +
