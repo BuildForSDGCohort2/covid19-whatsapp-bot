@@ -30,7 +30,7 @@ app.post('/incoming', (req, res) => {
         body = body
       }
 
-      const msg = twiml.message( body['countryInfo']['flag'] + +body['country'] + '  '+ '(' + date + ')' + '\n\n' + 'Updated on : ' + body['updated'].toLocale.toString+ '\n\n' + 'Cases Today : ' + body['todayCases'] + '\n\n' + 'Deaths Today : ' + body['todayDeaths'] + '\n\n' + 'Total Cases : ' + body['cases'] + '\n\n' + 'Active Cases : ' + body['active'] + '\n\n' + 'Total Deaths : ' + body['deaths'] + '\n\n' + 'Total Recovered : ' + body['recovered'] + '\n\n' + 'Total critical : ' + body['critical'] +'\n\n' + 'Total tests : ' + body['tests'] +
+      const msg = twiml.message( body['countryInfo'][0]['flag'] + +body['country'] + '  '+ '(' + date + ')' + '\n\n' + 'Updated on : ' + body['updated'].toLocale.toString+ '\n\n' + 'Cases Today : ' + body['todayCases'] + '\n\n' + 'Deaths Today : ' + body['todayDeaths'] + '\n\n' + 'Total Cases : ' + body['cases'] + '\n\n' + 'Active Cases : ' + body['active'] + '\n\n' + 'Total Deaths : ' + body['deaths'] + '\n\n' + 'Total Recovered : ' + body['recovered'] + '\n\n' + 'Total critical : ' + body['critical'] +'\n\n' + 'Total tests : ' + body['tests'] +
         '\n\n' + 'Created by Mulubwa Chungu' +
         '\n\n' + 'linkedIn :https://www.linkedin.com/in/mulubwa-chungu-39748098/' + '\n\n' + 'github: https://github.com/Mulubwa17')
       res.writeHead(200, {
