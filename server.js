@@ -31,9 +31,9 @@ app.post("/incoming", (req, res) => {
       "https://disease.sh/v3/covid-19/countries/" + req.body.Body,
       function (error, response, body) {
         body = JSON.parse(body);
-        console.log(body);
+        console.log('body:',body["country"]);
 
-        if (body == "") {
+        if (body["country"] == "") {
           body = body;
         }
 
@@ -81,10 +81,12 @@ app.post("/incoming", (req, res) => {
         res.end(twiml.toString());
       }
     );
-  } else {
+  } else  if (body["country"] == "undefined" || body["country"] != "") {
+    body = body;
+  }{
     var msg = twiml.message(
       `*Hey 👋*
-Try it out - send me any country name to get its covid statistics` +
+Seems you mistyped there,`+`\n\n` +`- Send me any country name to get its covid statistics` +
         "\n\n" +
         "Bot Created by Mulubwa Chungu" +
         "\n\n" +
