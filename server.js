@@ -80,7 +80,7 @@ app.post("/incoming", (req, res) => {
         res.end(twiml.toString());
       }
     );
-  } else if (req.body.Body == "undefined") {
+  } else if (req.body.Body == undefined) {
     var msg = twiml.message(
       `*Hey 👋*
 Seems you mistyped there,` +
