@@ -81,9 +81,7 @@ app.post("/incoming", (req, res) => {
         res.end(twiml.toString());
       }
     );
-  } else  if (body["country"] == "undefined" || body["country"] != "") {
-    body = body;
-  }{
+  } else  if (body["country"] != body["country"]){
     var msg = twiml.message(
       `*Hey 👋*
 Seems you mistyped there,`+`\n\n` +`- Send me any country name to get its covid statistics` +
