@@ -25,7 +25,8 @@ app.post("/incoming", (req, res) => {
     req.body.Body.toLowerCase().trim() != "hi" &&
     req.body.Body.toLowerCase().trim() != "hello" &&
     req.body.Body.toLowerCase().trim() != "test" &&
-    req.body.Body.toLowerCase().trim() != "help"
+    req.body.Body.toLowerCase().trim() != "help" &&
+    req.body.Body == "undefined"
   ) {
     request(
       "https://disease.sh/v3/covid-19/countries/" + req.body.Body,
@@ -33,7 +34,7 @@ app.post("/incoming", (req, res) => {
         body = JSON.parse(body);
         console.log(body);
 
-        if (body["country"] == "") {
+        if (body == "") {
           body = body;
         }
 
@@ -80,7 +81,7 @@ app.post("/incoming", (req, res) => {
         res.end(twiml.toString());
       }
     );
-  } else if (req.body.Body == undefined) {
+  } else  {
     var msg = twiml.message(
       `*Hey 👋*
 Seems you mistyped there,` +
