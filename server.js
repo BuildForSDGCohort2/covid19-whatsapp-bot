@@ -26,9 +26,7 @@ app.post("/incoming", (req, res) => {
     req.body.Body.toLowerCase().trim() != "hi" &&
     req.body.Body.toLowerCase().trim() != "hello" &&
     req.body.Body.toLowerCase().trim() != "test" &&
-    req.body.Body.toLowerCase().trim() != "help" &&
-    req.body.Body != req.body.Body
-    
+    req.body.Body.toLowerCase().trim() != "help"
   ) {
     request(
       "https://disease.sh/v3/covid-19/countries/" + req.body.Body,
@@ -83,7 +81,7 @@ app.post("/incoming", (req, res) => {
         res.end(twiml.toString());
       }
     );
-  } else  {
+  } else {
     var msg = twiml.message(
       `*Hey 👋*
 Seems you mistyped there,` +
